@@ -1,32 +1,72 @@
 import Config
 
-# ----- XcDemoBase -----
+# ----- PLE_DEMO_BASE
 
-config :xc_demo_base, XcDemoBase.Endpoint,
-  # Binding to loopback ipv4 address prevents access from other machines.
-  # Change to `ip: {0, 0, 0, 0}` to allow access from other machines.
-  http: [ip: {127, 0, 0, 1}, port: 4000],
-  check_origin: false,
-  code_reloader: true,
+config :ple_demo_base, PleDemoBaseWeb.Endpoint,
+  http: [port: 4040],
   debug_errors: true,
-  secret_key_base: "q6wHNXvJLscA4AgIi5MlRbOHcWLdpFbyOSphd7HgJGwBLN8kB7fuqlmzdhyfpGkJ",
+  code_reloader: true,
+  check_origin: false,
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
+    esbuild: {Esbuild, :install_and_run, [:ple_demo_base, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:ple_demo_base, ~w(--watch)]}
   ]
 
-# Watch static and templates for browser reloading.
-config :xc_demo_base, XcDemoBase.Endpoint,
+config :ple_demo_base, PleDemoBaseWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/xc_demo_base/(live|views)/.*(ex)$",
-      ~r"lib/xc_demo_base/templates/.*(eex)$"
+      ~r"lib/ple_demo_base_web/(live|views)/.*(ex)$",
+      ~r"lib/ple_demo_base_web/templates/.*(eex)$"
     ]
   ]
 
-# ----- Misc -----
+# ----- PLE_DEMO_MILLIGRAM
+
+config :ple_demo_milligram, PleDemoMilligramWeb.Endpoint,
+  http: [port: 4041],
+  debug_errors: true,
+  code_reloader: true,
+  check_origin: false,
+  watchers: [
+    esbuild: {Esbuild, :install_and_run, [:ple_demo_milligram, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:ple_demo_milligram, ~w(--watch)]}
+  ]
+
+config :ple_demo_milligram, PleDemoMilligramWeb.Endpoint,
+  live_reload: [
+    patterns: [
+      ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
+      ~r"priv/gettext/.*(po)$",
+      ~r"lib/ple_demo_milligram_web/(live|views)/.*(ex)$",
+      ~r"lib/ple_demo_milligram_web/templates/.*(eex)$"
+    ]
+  ]
+
+# ----- PLE_DEMO_TAILWIND3
+
+config :ple_demo_tailwind3, PleDemoTailwind3Web.Endpoint,
+  http: [port: 4042],
+  debug_errors: true,
+  code_reloader: true,
+  check_origin: false,
+  watchers: [
+    esbuild: {Esbuild, :install_and_run, [:ple_demo_tailwind3, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:ple_demo_tailwind3, ~w(--watch)]}
+  ]
+
+config :ple_demo_tailwind3, PleDemoTailwind3Web.Endpoint,
+  live_reload: [
+    patterns: [
+      ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
+      ~r"priv/gettext/.*(po)$",
+      ~r"lib/ple_demo_tailwind3_web/(live|views)/.*(ex)$",
+      ~r"lib/ple_demo_tailwind3_web/templates/.*(eex)$"
+    ]
+  ]
+
+# ----- MISC
 
 config :logger, :console, format: "[$level] $message\n"
 
