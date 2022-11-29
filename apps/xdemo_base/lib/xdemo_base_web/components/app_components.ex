@@ -13,4 +13,6 @@ defmodule XdemoBaseWeb.AppComponents do
 
   defdelegate zflash(assigns), to: XdemoBaseWeb.CoreComponents, as: :flash
 
+  defdelegate flash(assigns), to: XdemoBaseWeb.CoreComponents
+
 end

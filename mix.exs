@@ -1,4 +1,4 @@
-defmodule LiveEditable.Umbrella.MixProject do
+defmodule Xcomponents.Umbrella.MixProject do
   use Mix.Project
 
   def project do
@@ -7,6 +7,8 @@ defmodule LiveEditable.Umbrella.MixProject do
       version: "0.0.1-alpha.2",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
+      name: "Xcomponents",
+      source_url: "https://github.com/andyl/xcomponents",
       # xref: [exclude: [Phoenix.HTML, Phoenix.LiveEditableView, Phoenix.LiveEditableComponent]],
       # aliases: aliases(),
       # releases: releases()
@@ -14,7 +16,9 @@ defmodule LiveEditable.Umbrella.MixProject do
   end
 
   defp deps do
-    []
+    [
+      {:ex_doc, "~> 0.27", only: :dev, runtime: false}
+    ]
   end
 
   # defp releases do
