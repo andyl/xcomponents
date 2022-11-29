@@ -110,8 +110,8 @@ Instruction on how to create new Xcomponents modules TBD.
 
 ## Development Roadmap 
 
-- [ ] Build out minimal home page 
-- [ ] Build out Tailwind3 site 
+- [x] Build out minimal home page 
+- [x] Build out Tailwind3 site 
 - [ ] Add `PhxLiveStorybook` to Tailwind3 site 
 - [ ] Build out Milligram site 
 - [ ] Add `PhxLiveStorybook` to Milligram site 

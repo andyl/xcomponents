@@ -17,7 +17,7 @@ defmodule XdemoMilligramWeb.Router do
   scope "/", XdemoMilligramWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", PageLive, :index
   end
 
   # Other scopes may use custom stacks.

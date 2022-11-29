@@ -17,11 +17,7 @@ defmodule XdemoTailwind3Web.Router do
   scope "/", XdemoTailwind3Web do
     pipe_through :browser
 
-    get "/", PageController, :home
+    live "/", PageLive, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", XdemoTailwind3Web do
-  #   pipe_through :api
-  # end
 end
