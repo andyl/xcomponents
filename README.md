@@ -38,13 +38,13 @@ The [Xcomponents Repo][gh] is an umbrella project.  This was done to make it
 easier to demo and test the Xcomponents components against a variety of CSS
 frameworks.  
 
-| Umbrella Subapp      | Description                                   |
-|----------------------|-----------------------------------------------|
-| `ple_demo_base`      | phoenix app with a landing page               |
-| `ple_demo_milligram` | phoenix app with Xcomponents using Milligram |
-| `ple_demo_tailwind3` | phoenix app with Xcomponents using Tailwind3 |
-| `ple_util`           | utility modules to support the demo apps      |
-| `xcomponents`        | the components                                |
+| Umbrella Subapp   | Description                                  |
+|-------------------|----------------------------------------------|
+| `xcomponents`     | the components                               |
+| `xdemo_base`      | phoenix app with a landing page              |
+| `xdemo_milligram` | phoenix app with Xcomponents using Milligram |
+| `xdemo_tailwind3` | phoenix app with Xcomponents using Tailwind3 |
+| `xdemo_util`      | utility modules to support the demo apps     |
 
 Note that the Xcomponents package (TBD) on hex.pm contains only the
 `xcomponents` subapp, not the demo apps.
