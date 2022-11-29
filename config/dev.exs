@@ -1,68 +1,68 @@
 import Config
 
-# ----- PLE_DEMO_BASE
+# ----- XDEMO_BASE
 
-config :ple_demo_base, PleDemoBaseWeb.Endpoint,
+config :xdemo_base, XdemoBaseWeb.Endpoint,
   http: [port: 4040],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:ple_demo_base, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:ple_demo_base, ~w(--watch)]}
+    esbuild: {Esbuild, :install_and_run, [:xdemo_base, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:xdemo_base, ~w(--watch)]}
   ]
 
-config :ple_demo_base, PleDemoBaseWeb.Endpoint,
+config :xdemo_base, XdemoBaseWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/ple_demo_base_web/(live|views)/.*(ex)$",
-      ~r"lib/ple_demo_base_web/templates/.*(eex)$"
+      ~r"lib/xdemo_base_web/(live|views)/.*(ex)$",
+      ~r"lib/xdemo_base_web/templates/.*(eex)$"
     ]
   ]
 
-# ----- PLE_DEMO_MILLIGRAM
+# ----- XDEMO_MILLIGRAM
 
-config :ple_demo_milligram, PleDemoMilligramWeb.Endpoint,
+config :xdemo_milligram, XdemoMilligramWeb.Endpoint,
   http: [port: 4041],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:ple_demo_milligram, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:ple_demo_milligram, ~w(--watch)]}
+    esbuild: {Esbuild, :install_and_run, [:xdemo_milligram, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:xdemo_milligram, ~w(--watch)]}
   ]
 
-config :ple_demo_milligram, PleDemoMilligramWeb.Endpoint,
+config :xdemo_milligram, XdemoMilligramWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/ple_demo_milligram_web/(live|views)/.*(ex)$",
-      ~r"lib/ple_demo_milligram_web/templates/.*(eex)$"
+      ~r"lib/xdemo_milligram_web/(live|views)/.*(ex)$",
+      ~r"lib/xdemo_milligram_web/templates/.*(eex)$"
     ]
   ]
 
-# ----- PLE_DEMO_TAILWIND3
+# ----- XDEMO_TAILWIND3
 
-config :ple_demo_tailwind3, PleDemoTailwind3Web.Endpoint,
+config :xdemo_tailwind3, XdemoTailwind3Web.Endpoint,
   http: [port: 4042],
   debug_errors: true,
   code_reloader: true,
   check_origin: false,
   watchers: [
-    esbuild: {Esbuild, :install_and_run, [:ple_demo_tailwind3, ~w(--sourcemap=inline --watch)]},
-    tailwind: {Tailwind, :install_and_run, [:ple_demo_tailwind3, ~w(--watch)]}
+    esbuild: {Esbuild, :install_and_run, [:xdemo_tailwind3, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:xdemo_tailwind3, ~w(--watch)]}
   ]
 
-config :ple_demo_tailwind3, PleDemoTailwind3Web.Endpoint,
+config :xdemo_tailwind3, XdemoTailwind3Web.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/ple_demo_tailwind3_web/(live|views)/.*(ex)$",
-      ~r"lib/ple_demo_tailwind3_web/templates/.*(eex)$"
+      ~r"lib/xdemo_tailwind3_web/(live|views)/.*(ex)$",
+      ~r"lib/xdemo_tailwind3_web/templates/.*(eex)$"
     ]
   ]
 

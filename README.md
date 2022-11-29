@@ -1,83 +1,67 @@
-# Phoenix.LiveEditable 
+# Xcomponents
 
-LiveView components for in-place editing. 
+LiveView components that work across CSS frameworks.
 
-LiveEditable provides helpers for your LiveView/HEEX templates.
+## CSS Frameworks  
 
-Example HEEX tag:
+| Framework  | Status         |
+|------------|----------------|
+| Tailwind3  | in development |
+| Milligram  | in development |
+| Bootstrap5 | future         |
+| Bulma      | future         |
 
-    <.live_editable id="MyField" ple_data="Click me to Edit" ple_action="save"/>
+## Components 
 
-Add a handler to your LiveView:
+Core scope:  
+- [Built in Components](https://hexdocs.pm/phoenix_live_view/Phoenix.Component.html#components) (especially "link")
+- [CoreComponents](https://github.com/phoenixframework/phoenix/blob/3cf1f1065ce11a906bd04b7841814cdced3f0df2/installer/templates/phx_web/components/core_components.ex)
 
-    def handle_event("save", value, socket) end
-       ... do something ...
-    end
+Out of scope: 
+- Component definitions inspired by [Bootstrap5](https://getbootstrap.com/docs/5.0/getting-started/introduction/) (maybe in future?)
+- Component definitions inspired by [DaisyUI](https://daisyui.com/) (maybe in future?)
+- Everything else
 
-See the [online demo][ld] for running examples.
+## Namespacing 
 
-LiveEditable is for admin interfaces to provide basic inline editing. It
-supports many CSS frameworks (Tailwind, Milligram, etc.) and field types (Text,
-Select, etc.).  LiveEditable is inspired by [Vitaliy Potapov's][vp]
-[X-Editable][xe], and is designed to be extensible.
+Component modules: 
+- `Xcomponents.Tailwind3`
+- `Xcomponents.Milligram`
+- `Xcomponents.Bootstrap5`
+- `Xcomponents.Bulma`
 
-LiveEditable is pre-alpha - not ready for demo or production use.
-
-[xe]: http://vitalets.github.io/x-editable
-[ld]: http://phoenix-live-editable.fly.dev
-[vp]: https://github.com/vitalets
-
-## Demonstration 
-
-IN YOUR BROWSER: 
-
-Try the [online demo][ld]. 
-
-USING DOCKER ON YOUR DESKTOP: 
-
-    $ docker run -p 8080-8082:8080-8082 andyldk/phoenix_live_editable
-
-Now open a browser and visit `http://localhost:8080`
-
-CLONING THE SOURCE TO YOUR DESKTOP: 
-
-    $ git clone https://github.com/andyl/phoenix_live_editable 
-    $ cd phoenix_live_editable 
-    $ mix deps.get
-    $ mix phx.server 
-
-Now open a browser and visit `http://localhost:4040`
+Component names are prefixed by "x".  eg `<.link ...>` -> `<.xlink ...>`
 
 ## Code Organization 
 
-The [LiveEditable Repo][gh] is an umbrella project.  This was done to make it
-easier to demo and test the LiveEditable components against a variety of CSS
+The [Xcomponents Repo][gh] is an umbrella project.  This was done to make it
+easier to demo and test the Xcomponents components against a variety of CSS
 frameworks.  
 
-| Umbrella Subapp         | Description                                   |
-|-------------------------|-----------------------------------------------|
-| `phoenix_live_editable` | LiveEditable components                       |
-| `ple_demo_base`         | phoenix app with a landing page               |
-| `ple_demo_milligram`    | phoenix app with LiveEditable using Milligram |
-| `ple_demo_tailwind3`    | phoenix app with LiveEditable using Tailwind3 |
-| `ple_util`              | utility modules to support the demo apps      |
+| Umbrella Subapp      | Description                                   |
+|----------------------|-----------------------------------------------|
+| `ple_demo_base`      | phoenix app with a landing page               |
+| `ple_demo_milligram` | phoenix app with Xcomponents using Milligram |
+| `ple_demo_tailwind3` | phoenix app with Xcomponents using Tailwind3 |
+| `ple_util`           | utility modules to support the demo apps      |
+| `xcomponents`        | the components                                |
 
-Note that the LiveEditable package on hex.pm contains only the
-`phoenix_live_editable` subapp, not the demo apps.
+Note that the Xcomponents package (TBD) on hex.pm contains only the
+`xcomponents` subapp, not the demo apps.
 
-[gh]: https://github.com/andyl/phoenix_live_editable
+[gh]: https://github.com/andyl/xcomponents
 
 ## Installation
 
-PhoenixLiveEditable can be installed in your own LV application by adding
-`phoenix_live_editable` to your list of dependencies in `mix.exs`:
+Xcomponents can be installed in your own LV application by adding
+`xcomponents` to your list of dependencies in `mix.exs`:
 
 Using the path option: 
 ```elixir
 def deps do
   [
-    {:phoenix_live_editable, 
-      path: "~/src_root/phoenix_live_editable/apps/phoenix_live_editable"}
+    {:xcomponents, 
+      path: "~/src_root/xcomponents/apps/xcomponents"}
   ]
 end
 ```
@@ -86,9 +70,9 @@ Using the github option:
 ```elixir
 def deps do
   [
-    {:phoenix_live_editable, 
-      github: "andyl/phoenix_live_editable",
-      subdir: "apps/phoenix_live_editable"}
+    {:xcomponents, 
+      github: "andyl/xcomponents",
+      subdir: "apps/xcomponents"}
   ]
 end
 ```
@@ -97,7 +81,7 @@ Using the hex option:
 ```elixir
 def deps do
   [
-    {:phoenix_live_editable, "~> 0.0.1"}
+    {:xcomponents, "~> 0.0.1"}
   ]
 end
 ```
@@ -106,27 +90,44 @@ After that:
 
     $ mix deps.get && mix deps.compile
 
-Next add LiveEditable configuartion to your `config/config.exs`:
-
-    config :<your_phoenix_app>, <your endpoint>, [
-      live_editable: [ple_interface: <YOUR_CSS_FRAMEWORK_MODULE>]
-    ]
-
 Valid Framework Modules include:
 
-    - Phoenix.LiveEditable.Interface.Milligram
-    - Phoenix.LiveEditable.Interface.Tailwind3 
+    - Xcomponents.Milligram
+    - Xcomponents.Tailwind3 
 
-Now you can use LiveEditable in your LiveViews and LiveComponents:
+Now you can use Xcomponents in your LiveViews and LiveComponents:
 
     defmodule MyApp.Live.Asdf do
     end
 
-## Customizing LiveEditable
+## Customizing Xcomponents
 
-Instructions on how to tweak LiveEditable CSS TBD.
+Instructions on how to tweak Xcomponents CSS TBD.
 
-## Extending LiveEditable
+## Extending Xcomponents
 
-Instruction on how to create new LiveEditable modules TBD.
+Instruction on how to create new Xcomponents modules TBD.
+
+## Development Roadmap 
+
+- [ ] Build out minimal home page 
+- [ ] Build out Tailwind3 site 
+- [ ] Add `PhxLiveStorybook` to Tailwind3 site 
+- [ ] Build out Milligram site 
+- [ ] Add `PhxLiveStorybook` to Milligram site 
+- [ ] Fix Dockerfile 
+- [ ] Publish Docker image 
+- [ ] Publish to Fly.io 
+
+## Help Wanted 
+
+Firstly: I'm only going to develop components that I'm using myself on my
+current projects.  So initially there's going to be a lot of blanks in the
+Xcomponents `CanIUse` table.
+
+Pull requests welcome!
+
+Secondly: Designers needed!  My goals are that the Xcomponents will have
+minimal, simple, consistent styling.  Hopefully easy work for a person with
+good design sensibility.
 

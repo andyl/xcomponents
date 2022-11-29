@@ -1,0 +1,27 @@
+defmodule XdemoTailwind3Web.Router do
+  use XdemoTailwind3Web, :router
+
+  pipeline :browser do
+    plug :accepts, ["html"]
+    plug :fetch_session
+    plug :fetch_live_flash
+    plug :put_root_layout, {XdemoTailwind3Web.Layouts, :root}
+    plug :protect_from_forgery
+    plug :put_secure_browser_headers
+  end
+
+  pipeline :api do
+    plug :accepts, ["json"]
+  end
+
+  scope "/", XdemoTailwind3Web do
+    pipe_through :browser
+
+    get "/", PageController, :home
+  end
+
+  # Other scopes may use custom stacks.
+  # scope "/api", XdemoTailwind3Web do
+  #   pipe_through :api
+  # end
+end
