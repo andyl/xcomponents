@@ -92,7 +92,7 @@ defmodule Phx.Demo.Helpers do
 
   defp port_for(subsite) do
     base_port =
-      case Application.get_env(:phoenix_live_editable, :env) do
+      case Application.get_env(:xcomponents, :env) do
         :dev -> 4040
         :test -> 6060
         :prod -> 8080

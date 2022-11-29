@@ -23,6 +23,7 @@ defmodule XdemoUtil.MixProject do
 
   defp deps do
     [
+      {:xcomponents, in_umbrella: true},
       {:phoenix, "~> 1.7.0-rc.0", override: true},
       {:phoenix_live_view, "~> 0.18"},
     ]

@@ -36,6 +36,8 @@ defmodule XdemoTailwind3.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:xcomponents, in_umbrella: true},
+      {:xdemo_util, in_umbrella: true},
       {:phoenix, "~> 1.7.0-rc.0", override: true},
       {:phoenix_html, "~> 3.0"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
