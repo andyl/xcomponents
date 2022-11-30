@@ -2,7 +2,7 @@ defmodule XdemoBaseWeb.Test2Live do
 
   use XdemoBaseWeb, :live_view
 
-  import XdemoBaseWeb.Components
+  import XdemoBaseWeb.AppComponents
 
   # ----- lifecycle callbacks -----
 

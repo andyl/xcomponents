@@ -5,7 +5,7 @@ defmodule XdemoBaseWeb.Test1Live do
   # alias Phx.Demo.Helpers
 
   # import Xcomponents.Tailwind3
-  import XdemoBaseWeb.Components
+  import XdemoBaseWeb.AppComponents
 
   # ----- lifecycle callbacks -----
 

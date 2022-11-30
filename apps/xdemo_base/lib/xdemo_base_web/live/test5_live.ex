@@ -1,35 +1,19 @@
-defmodule PleDemoBaseWeb.Test5Live do
+defmodule XdemoBaseWeb.Test5Live do
 
-  @moduledoc """
-  A demo page that shows various LiveEditable components.
-  """
+  use XdemoBaseWeb, :live_view
 
-  # use PleDemoBaseWeb, :live_view
-  # use Phoenix.LiveEditableView
-  #
-  # alias PleDemoBaseWeb.Test5Handler, as: T5Handler
-  # import PleDemoBase.Components
-  #
-  # # ----- lifecycle callbacks -----
-  #
-  # def mount(_params, _session, socket) do
-  #   {:ok, assign(socket, :viewdata, "CLICK ME TO EDIT")}
-  # end
-  #
-  # def handle_params(_params, _url, socket) do
-  #   {:noreply, socket}
-  # end
-  #
-  # # ----- event handlers -----
-  #
-  # def handle_event(_tag, _data, socket) do
-  #   {:noreply, socket}
-  # end
-  #
-  # def handle_info({:viewupdate, %{"data" => newdata}}, socket) do
-  #   {:noreply, assign(socket, :viewdata, newdata)}
-  # end
+  import XdemoBaseWeb.AppComponents
 
-  # ----- view helpers -----
+  # ----- lifecycle callbacks -----
+
+  def mount(_params, _session, socket) do
+    {:ok, socket}
+  end
+
+  def handle_params(_params, url, socket) do
+    {:noreply, assign(socket, :url, url)}
+  end
+
+  # ----- event handlers -----
 
 end

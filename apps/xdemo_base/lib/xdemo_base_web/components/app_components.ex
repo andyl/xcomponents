@@ -1,4 +1,4 @@
-defmodule XdemoBaseWeb.Components do
+defmodule XdemoBaseWeb.AppComponents do
 
   use Phoenix.Component
 

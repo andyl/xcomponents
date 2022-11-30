@@ -1,25 +1,20 @@
-defmodule PleDemoBaseWeb.Test4Live do
+defmodule XdemoBaseWeb.Test4Live do
 
-  # use PleDemoBaseWeb, :live_view
-  # use Phoenix.LiveEditableView
-  # import PleDemoBase.Components
-  #
-  # # ----- lifecycle callbacks -----
-  #
-  # def mount(_params, _session, socket) do
-  #   data = %{
-  #     "id1" => "MyData1",
-  #     "id2" => "MyData2",
-  #     "id3" => "MyData3",
-  #     "id4" => "MyData4"
-  #   }
-  #   {:ok, assign(socket, :data, data)}
-  # end
-  #
-  # def handle_params(_params, _url, socket) do
-  #   {:noreply, socket}
-  # end
-  #
-  # # ----- event handlers -----
+  use XdemoBaseWeb, :live_view
+
+  import XdemoBaseWeb.AppComponents
+
+  # ----- lifecycle callbacks -----
+
+  def mount(_params, _session, socket) do
+    {:ok, socket}
+  end
+
+  def handle_params(_params, url, socket) do
+    {:noreply, assign(socket, :url, url)}
+  end
+
+  # ----- event handlers -----
+
 
 end

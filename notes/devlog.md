@@ -2,8 +2,6 @@
 
 ## ROADMAP 
 
-- [x] Build out minimal home page 
-- [x] Build out Tailwind3 site 
 - [ ] Add `PhxLiveStorybook` to Tailwind3 site 
 - [ ] Build out Milligram site 
 - [ ] Add `PhxLiveStorybook` to Milligram site 
@@ -22,5 +20,14 @@
 
 ## 2022 Nov 29 Tue
 
+- [x] Build out minimal home page 
 - [x] Create demo sites 
+- [x] Organize components 
+- [x] Get all test pages working 
 
+- [ ] Test list components 
+
+- [ ] Make a list component 
+
+- [ ] Make a hdr-nav component `unav_hdr`
+- [ ] Make a tst-nav component `unav_tst`
