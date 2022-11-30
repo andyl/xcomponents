@@ -58,7 +58,7 @@ defmodule Phx.Demo.Helpers do
     end
 
     src_port = case uri.port do
-      80 -> 8080
+      80  -> 8080
       443 -> 8080
       alt -> alt
     end
