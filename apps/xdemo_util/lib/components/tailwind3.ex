@@ -49,8 +49,8 @@ defmodule Util.Tailwind3 do
   defp unav_hdr_item(assigns) do
     ~H"""
     <span >
-      <.xlink :if={} href={}><%= "TBD" %></.xlink>
-      <.ulink_active :if{} ><%= TBD %></.ulink_active>
+      <Xcomponents.Tailwind3.xlink :if={} href={}><%= "TBD" %></Xcomponents.Tailwind3.xlink>
+      <.ulink_active><%= "TBD" %></.ulink_active>
       <%# Phoenix.HTML.raw Phx.Demo.Helpers.demolink(@url, @site, " Demo") %>
     </span>
     """

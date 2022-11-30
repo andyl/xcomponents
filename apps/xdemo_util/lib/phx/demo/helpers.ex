@@ -83,17 +83,18 @@ defmodule Phx.Demo.Helpers do
 
   defp label_for(subsite) do
     case subsite do
-      :base -> "Home"
-      :milligram -> "Milligram"
-      :tailwind3 -> "Tailwind3"
+      :base       -> "Home"
+      :milligram  -> "Milligram"
+      :tailwind3  -> "Tailwind3"
       :bootstrap5 -> "Bootstrap5"
+      :bulma      -> "Bulma"
     end
   end
 
   defp port_for(subsite) do
     base_port =
       case Application.get_env(:xcomponents, :env) do
-        :dev -> 4040
+        :dev  -> 4040
         :test -> 6060
         :prod -> 8080
       end
@@ -104,7 +105,7 @@ defmodule Phx.Demo.Helpers do
         :milligram  -> 1
         :tailwind3  -> 2
         :bootstrap5 -> 3
-        :bulma      -> 3
+        :bulma      -> 4
       end
 
     base_port + sub_port

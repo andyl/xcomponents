@@ -24,10 +24,19 @@
 - [x] Create demo sites 
 - [x] Organize components 
 - [x] Get all test pages working 
+- [x] Test list components 
+- [x] Make a list component 
 
-- [ ] Test list components 
+## 2022 Nov 30 Wed
 
-- [ ] Make a list component 
+Note:
+- Menu state needs to come top-down 
+- Calculate on mount
+- Use pattern matching in component bodies instead of conditionals
 
-- [ ] Make a hdr-nav component `unav_hdr`
-- [ ] Make a tst-nav component `unav_tst`
+defmodule Util.Menu do 
+  defstruct [:label, :href, :state]
+end
+
+- [ ] Make a hdr-nav component `unav_hdr` 
+- [ ] Make a tst-nav component `unav_tst` 
