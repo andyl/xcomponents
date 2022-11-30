@@ -18,8 +18,8 @@ defmodule XdemoBaseWeb.Router do
     pipe_through :browser
 
     live "/", PageLive
-    # live "/home", PageLive
-    # live "/test", Test1Live
+    live "/home", PageLive
+    live "/test", Test1Live
     # live "/test1", Test1Live
     # live "/test2", Test2Live
     # live "/test3", Test3Live

@@ -25,6 +25,7 @@ defmodule Xcomponents.MixProject do
     [
       {:phoenix, "~> 1.7.0-rc.0", override: true, runtime: false},
       {:phoenix_live_view, "~> 0.18"},
+      {:heroicons, "~> 0.5"},
     ]
   end
 end

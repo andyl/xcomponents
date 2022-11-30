@@ -108,22 +108,11 @@ Instructions on how to tweak Xcomponents CSS TBD.
 
 Instruction on how to create new Xcomponents modules TBD.
 
-## Development Roadmap 
-
-- [x] Build out minimal home page 
-- [x] Build out Tailwind3 site 
-- [ ] Add `PhxLiveStorybook` to Tailwind3 site 
-- [ ] Build out Milligram site 
-- [ ] Add `PhxLiveStorybook` to Milligram site 
-- [ ] Fix Dockerfile 
-- [ ] Publish Docker image 
-- [ ] Publish to Fly.io 
-
 ## Help Wanted 
 
-Firstly: I'm only going to develop components that I'm using myself on my
-current projects.  So initially there's going to be a lot of blanks in the
-Xcomponents `CanIUse` table.
+Firstly: I will only develop components that I'm using myself on my current
+projects.  So initially there's going to be a lot of blanks in the Xcomponents
+`CanIUse` table.
 
 Pull requests welcome!
 

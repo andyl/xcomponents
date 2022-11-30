@@ -9,13 +9,13 @@ defmodule Phx.Demo.Components.Tailwind3 do
 
   def alink(assigns) do
     ~H"""
-    <a
-      class="text-red-500"
+    <.link
+      class={"underline decoration-blue-400 hover:decoration-blue-800 decoration-2 #{@class}"}
       href={@href}
       {@rest}
     >
     <%= render_slot(@inner_block) %>
-    </a>
+    </.link>
     """
   end
 end

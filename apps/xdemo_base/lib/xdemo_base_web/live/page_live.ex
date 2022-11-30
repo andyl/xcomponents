@@ -1,16 +1,14 @@
 defmodule XdemoBaseWeb.PageLive do
+
   use XdemoBaseWeb, :live_view
-  # use Phoenix.LiveEditableView
 
   alias Phx.Demo.Helpers
-  # alias XdemoBaseWeb.PageHandler
 
-  # alias Phx.Demo.Components.Tailwind3
+  import Xcomponents.Tailwind3
 
   # ----- lifecycle callbacks -----
 
   def mount(_params, _session, socket) do
-    # {:ok, assign(socket, :viewdata, "CLICK ME TO EDIT")}
     {:ok, socket}
   end
 
