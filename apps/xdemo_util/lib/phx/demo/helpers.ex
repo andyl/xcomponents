@@ -100,10 +100,11 @@ defmodule Phx.Demo.Helpers do
 
     sub_port =
       case subsite do
-        :base -> 0
-        :milligram -> 1
-        :tailwind3 -> 2
+        :base       -> 0
+        :milligram  -> 1
+        :tailwind3  -> 2
         :bootstrap5 -> 3
+        :bulma      -> 3
       end
 
     base_port + sub_port

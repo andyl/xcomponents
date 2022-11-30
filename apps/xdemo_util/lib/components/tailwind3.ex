@@ -24,4 +24,36 @@ defmodule Util.Tailwind3 do
     """
   end
 
+  @doc """
+  Renders the header nav.
+  """
+
+  # ----- unav_hdr -----
+
+  attr :url, :string, required: true, doc: "Current URL"
+
+  def unav_hdr(assigns) do
+    ~H"""
+    <Phoenix.Component.intersperse :let={site} enum={[:base, :milligram, :tailwind3]}>
+      <:separator> | </:separator>
+      <.unav_hdr_item url={@url} site={site} />
+    </Phoenix.Component.intersperse>
+    """
+  end
+
+  # ----- unav_hdr_item -----
+
+  attr :url, :string, required: true, doc: "Current URL"
+  attr :site, :any, required: true, doc: "Site atom"
+
+  defp unav_hdr_item(assigns) do
+    ~H"""
+    <span >
+      <.xlink :if={} href={}><%= "TBD" %></.xlink>
+      <.ulink_active :if{} ><%= TBD %></.ulink_active>
+      <%# Phoenix.HTML.raw Phx.Demo.Helpers.demolink(@url, @site, " Demo") %>
+    </span>
+    """
+  end
+
 end
