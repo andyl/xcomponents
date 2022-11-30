@@ -5,6 +5,7 @@ defmodule XdemoBaseWeb.PageLive do
   alias Phx.Demo.Helpers
 
   import Xcomponents.Tailwind3
+  import Util.Tailwind3
 
   # ----- lifecycle callbacks -----
 
