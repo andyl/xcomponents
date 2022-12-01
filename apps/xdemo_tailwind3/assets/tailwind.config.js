@@ -7,7 +7,9 @@ module.exports = {
   content: [
     "./js/**/*.js",
     "../lib/*_web.ex",
-    "../lib/*_web/**/*.*ex"
+    "../lib/*_web/**/*.*ex", 
+    "../../xdemo_util/lib/phx/demo/**/*.*ex", 
+    "../../xcomponents/lib/**/*.ex"
   ],
   theme: {
     extend: {

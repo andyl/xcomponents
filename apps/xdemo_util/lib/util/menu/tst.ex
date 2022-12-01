@@ -6,6 +6,7 @@ defmodule Util.Menu.Tst do
   """
   def data do
     [
+      %{id: :home , label: "Home" , href: "/"     },
       %{id: :test1, label: "Test1", href: "/test1"},
       %{id: :test2, label: "Test2", href: "/test2"},
       %{id: :test3, label: "Test3", href: "/test3"},

@@ -24,35 +24,45 @@ defmodule Util.Tailwind3 do
     """
   end
 
+  # ----- unav -----
+
   @doc """
-  Renders the header nav.
+  Renders a nav bar
   """
 
-  # ----- unav_hdr -----
+  attr :data, :any, required: true, doc: "Nav data"
 
-  attr :url, :string, required: true, doc: "Current URL"
-
-  def unav_hdr(assigns) do
+  def unav(assigns) do
     ~H"""
-    <Phoenix.Component.intersperse :let={site} enum={[:base, :milligram, :tailwind3]}>
+    <Phoenix.Component.intersperse :let={item} enum={@data}>
       <:separator> | </:separator>
-      <.unav_hdr_item url={@url} site={site} />
+      <.unav_link item={item}/>
     </Phoenix.Component.intersperse>
     """
   end
 
-  # ----- unav_hdr_item -----
+  # ----- unav_link -----
 
-  attr :url, :string, required: true, doc: "Current URL"
-  attr :site, :any, required: true, doc: "Site atom"
+  attr :item, :any, required: true, doc: "Menu item"
 
-  defp unav_hdr_item(assigns) do
+  def unav_link(%{item: %{state: "active"}} = assigns) do
     ~H"""
-    <span >
-      <Xcomponents.Tailwind3.xlink :if={} href={}><%= "TBD" %></Xcomponents.Tailwind3.xlink>
-      <.ulink_active><%= "TBD" %></.ulink_active>
-      <%# Phoenix.HTML.raw Phx.Demo.Helpers.demolink(@url, @site, " Demo") %>
-    </span>
+    <b><%= @item.label %></b>
+    """
+  end
+
+  def unav_link(%{item: %{state: "inactive"}} = assigns) do
+    ~H"""
+    <Xcomponents.Tailwind3.xlink href={@item.href}>
+    <%= @item.label %>
+    </Xcomponents.Tailwind3.xlink>
+    """
+  end
+
+  def unav_link(assigns) do
+    IO.inspect(assigns, label: "EIGHT")
+    ~H"""
+    <span>UNMATCHED</span>
     """
   end
 

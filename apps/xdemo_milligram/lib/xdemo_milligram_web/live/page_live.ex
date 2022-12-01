@@ -1,7 +1,9 @@
 defmodule XdemoMilligramWeb.PageLive do
   use XdemoMilligramWeb, :live_view
 
-  alias Phx.Demo.Helpers
+  alias Util.Menu.Hdr, as: HdrMenu
+
+  import Util.Tailwind3
 
   # ----- lifecycle callbacks -----
 
@@ -12,7 +14,8 @@ defmodule XdemoMilligramWeb.PageLive do
 
   @impl true
   def handle_params(_params, url, socket) do
-    {:noreply, assign(socket, :url, url)}
+    hdr_nav = HdrMenu.data(url) |> HdrMenu.set_active(:milligram)
+    {:noreply, assign(socket, url: url, hdr_nav: hdr_nav)}
   end
 
   # ----- event handlers -----

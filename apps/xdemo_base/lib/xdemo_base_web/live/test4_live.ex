@@ -2,7 +2,9 @@ defmodule XdemoBaseWeb.Test4Live do
 
   use XdemoBaseWeb, :live_view
 
-  import XdemoBaseWeb.AppComponents
+  alias Util.Menu.Tst, as: TstMenu
+
+  import Util.Tailwind3
 
   # ----- lifecycle callbacks -----
 
@@ -11,7 +13,8 @@ defmodule XdemoBaseWeb.Test4Live do
   end
 
   def handle_params(_params, url, socket) do
-    {:noreply, assign(socket, :url, url)}
+    tst_nav = TstMenu.data() |> TstMenu.set_active(:test4)
+    {:noreply, assign(socket, url: url, tst_nav: tst_nav)}
   end
 
   # ----- event handlers -----

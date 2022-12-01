@@ -2,7 +2,7 @@ defmodule XdemoBaseWeb.PageLive do
 
   use XdemoBaseWeb, :live_view
 
-  alias Phx.Demo.Helpers
+  alias Util.Menu.Hdr, as: HdrMenu
 
   import Xcomponents.Tailwind3
   import Util.Tailwind3
@@ -14,7 +14,8 @@ defmodule XdemoBaseWeb.PageLive do
   end
 
   def handle_params(_params, url, socket) do
-    {:noreply, assign(socket, :url, url)}
+    hdr_nav = HdrMenu.data(url) |> HdrMenu.set_active(:base)
+    {:noreply, assign(socket, url: url, hdr_nav: hdr_nav)}
   end
 
   # ----- event handlers -----
