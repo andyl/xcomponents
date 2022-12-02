@@ -38,5 +38,6 @@ defmodule Util.Menu do
   defstruct [:label, :href, :state]
 end
 
-- [ ] Make a hdr-nav component `unav_hdr` 
-- [ ] Make a tst-nav component `unav_tst` 
+- [x] Make a hdr-nav component `unav_hdr` 
+- [x] Make a tst-nav component `unav_tst` 
+- [ ] Clean out unused code
