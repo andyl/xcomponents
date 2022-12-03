@@ -2,12 +2,12 @@
 
 ## ROADMAP 
 
-- [ ] Add `PhxLiveStorybook` to Tailwind3 site 
+- [ ] Publish to Fly.io 
 - [ ] Build out Milligram site 
+- [ ] Add `PhxLiveStorybook` to Tailwind3 site 
 - [ ] Add `PhxLiveStorybook` to Milligram site 
 - [ ] Fix Dockerfile 
 - [ ] Publish Docker image 
-- [ ] Publish to Fly.io 
 
 # TODO 
 
@@ -40,4 +40,29 @@ end
 
 - [x] Make a hdr-nav component `unav_hdr` 
 - [x] Make a tst-nav component `unav_tst` 
-- [ ] Clean out unused code
+- [x] Clean out unused code 
+
+## 2022 Dec 02 Fri
+
+Notes:
+- PhxLiveStorybook doesn't work with Phoenix 1.7 
+- Wait for the next release
+
+Setting up Milligram on Phx1.7: 
+- mix phx.new <app> && cd <app> 
+- rm assets/tailwind.config.js
+- edit config/config.exs          # comment tailwind config
+- edit dev/dev.exs                # comment tailwind config
+- cd assets
+- npm install milligram 
+- edit js/app.js                  # import "../css/app.css"
+- edit css/app.css                # comment tailwind imports
+- edit css/app.css                # @import "../node_modules/milligram/dist/milligram.css";
+
+Now edit: 
+- components/layouts/app.html.heex 
+- components/layouts/root.html.heex
+- controllers/page_html/home.html.heex
+
+That's it 
+
