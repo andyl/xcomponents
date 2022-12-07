@@ -66,3 +66,15 @@ Now edit:
 
 That's it 
 
+## 2022 Dec 07 Wed
+
+Esbuild and alternative CSS frameworks 
+- https://dev.to/oliverandrich/adding-bootstrap-to-a-phoenix-1-6-project-hfe
+- https://elixirstatus.com/p/hwAlr-adding-bulma-to-phoenix-16
+- https://experimentingwithcode.com/using-bulma-and-sass-in-phoenix/
+- https://cloudless.studio/wrapping-your-head-around-assets-in-phoenix-1-6
+- https://hexdocs.pm/phoenix/asset_management.page_html
+- https://github.com/CargoSense/dart_sass
+- https://github.com/phoenixframework/tailwind
+
+
